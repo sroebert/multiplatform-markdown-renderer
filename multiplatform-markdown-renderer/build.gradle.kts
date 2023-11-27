@@ -15,7 +15,6 @@ android {
 
     defaultConfig {
         minSdk = Versions.androidMinSdk
-        targetSdk = Versions.androidTargetSdk
     }
 
     buildTypes {
@@ -53,8 +52,6 @@ android {
 }
 
 kotlin {
-    targetHierarchy.default()
-
     targets.all {
         compilations.all {
             compilerOptions.configure {
@@ -64,7 +61,7 @@ kotlin {
         }
     }
 
-    android {
+    androidTarget {
         publishLibraryVariants("release")
     }
     jvm {
@@ -96,12 +93,6 @@ kotlin {
         }
         val fileBasedTest by creating {
             dependsOn(commonTest)
-        }
-        val jvmTest by getting {
-            dependsOn(fileBasedTest)
-        }
-        val jsTest by getting {
-            dependsOn(fileBasedTest)
         }
         val nativeMain by getting {
             dependsOn(commonMain)
