@@ -52,7 +52,7 @@ android {
 }
 
 kotlin {
-//    targetHierarchy.default()
+    targetHierarchy.default()
 
     targets.all {
         compilations.all {
@@ -63,6 +63,9 @@ kotlin {
         }
     }
 
+    androidTarget {
+        publishLibraryVariants("release")
+    }
 //    jvm {
 //        compilations {
 //            all {
@@ -116,10 +119,6 @@ kotlin {
             getByName(set).dependsOn(nativeTest)
             getByName(set).dependsOn(fileBasedTest)
         }
-    }
-
-    androidTarget {
-        publishLibraryVariants("release")
     }
 }
 
