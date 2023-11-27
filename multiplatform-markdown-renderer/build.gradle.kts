@@ -52,6 +52,8 @@ android {
 }
 
 kotlin {
+    targetHierarchy.default()
+    
     targets.all {
         compilations.all {
             compilerOptions.configure {
