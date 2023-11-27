@@ -64,25 +64,25 @@ kotlin {
     androidTarget {
         publishLibraryVariants("release")
     }
-//    jvm {
-//        compilations {
-//            all {
-//                kotlinOptions.jvmTarget = "11"
-//            }
-//        }
-//
-//        testRuns["test"].executionTask.configure {
-//            useJUnit {
-//                excludeCategories("org.intellij.markdown.ParserPerformanceTest")
-//            }
-//        }
-//    }
-//    js(IR) {
-//        nodejs()
-//    }
-//    macosX64()
-//    macosArm64()
-//    iosSimulatorArm64()
+    jvm {
+        compilations {
+            all {
+                kotlinOptions.jvmTarget = "11"
+            }
+        }
+
+        testRuns["test"].executionTask.configure {
+            useJUnit {
+                excludeCategories("org.intellij.markdown.ParserPerformanceTest")
+            }
+        }
+    }
+    js(IR) {
+        nodejs()
+    }
+    macosX64()
+    macosArm64()
+    iosSimulatorArm64()
 
     sourceSets {
         val commonMain by getting
